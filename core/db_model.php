@@ -4,24 +4,55 @@
     // }else{
     //     require_once "./Core/config.php";
     // }
+    require_once ("core/settings.php");
     require_once "core/config.php";
     require_once "core/general_config.php";
 
     class DB_PDO{
 
         public function connect(){
-            $link = new PDO(SGBD,DB_USER,DB_PASSWORD);
-            $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $link->exec("SET NAMES 'utf8'");
-            return $link;
+            try {
+                $link = new PDO(SGBD,DB_USER,DB_PASSWORD);
+                $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $link->exec("SET NAMES 'utf8'");
+                return $link;
+            }catch(PDOException $e){
+                die(sprintf('No  hay conexión a la base de datos, hubo un error: %s', $e->getMessage()));
+            }
         }
 
         public function run_simple_query($query){
-            $answer=$this->connect()->prepare($query);
-            $answer->execute();
-            return $answer;
+            try{
+                $answer=$this->connect()->prepare($query);
+                $answer->execute();
+                return $answer;
+            }catch(Exception $e){
+                throw $e;
+            }
         }
 
+        public function first_data($table){
+            try {
+                $answer=$this->connect()->prepare("select * from ".$table." limit 1");
+                $answer->execute();
+                return $answer;
+
+            }catch(Exception $e){
+                throw $e;
+            }
+            
+        }
+        public function last_data($table, $order_by){
+            try {
+                $answer=$this->connect()->prepare("select * from ".$table." order by ".$order_by." desc limit 1");
+                $answer->execute();
+                return $answer;
+
+            }catch(Exception $e){
+                throw $e;
+            }
+            
+        }
 
         // protected function sweet_alert($data){
         //     if($data['Alert']=="simple"){
