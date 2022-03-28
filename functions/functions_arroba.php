@@ -272,7 +272,7 @@
      * @return void
      */
     function get_module($view, $data = []) {
-        $file_to_include = MODULES.$view.'Module.php';
+        $file_to_include = VIEW_MODULES.$view.'Module.php';
         $output = '';
         
         // Por si queremos trabajar con objeto
@@ -309,7 +309,7 @@
         
         // Check if theres a ?
         $query     = parse_url($url, PHP_URL_QUERY);
-        $_params[] = 'hook='.strtolower(SITE_NAME);
+        $_params[] = 'hook='.strtolower(SYSTEM_NAME);
         $_params[] = 'action=doing-task';
     
         // Si requiere token csrf
@@ -1257,10 +1257,27 @@
         register_scripts(['https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js'] , 'Summernote');
         return true;
     }
-
+    /*
+    *
+    * validate email
+    * 
+    */
         
+    function validate_email($email){
+        $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
+        $email = (preg_match($regex, $email))?$email:false;
+        return $email;
+    }  
+    
 
-
+    /**
+    *  validate password
+    *   @return password
+    */
+    function validate_password($password){
+        $pass = (preg_match('`[0-9]`', $password))?$password:"invalid pass";
+        return $pass;
+    }
 
 
         

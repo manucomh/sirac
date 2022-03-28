@@ -14,7 +14,7 @@
 	const SMONEY = "S/.";
 
 	//Simbolo de moneda
-	const STAX = "IGV";
+	// const STAX = "IGV";
 
 	//Datos para encryptacion
 	const METHODC="AES-256-CBC";

@@ -29,10 +29,10 @@ class Sireci {
     $this->init_load_config();
     $this->init_load_functions();
     $this->init_load_composer();
-    $this->init_autoload();
+    // $this->init_autoload();
     $this->init_csrf();
-    $this->init_globals();
-    $this->init_custom();
+    // $this->init_globals();
+    // $this->init_custom();
     $this->dispatch();
   }
 
@@ -120,16 +120,6 @@ class Sireci {
     return;
   }
 
-  /**
-   * Método para cargar todos los archivos de forma automática
-   *
-   * @return void
-   */
-  private function init_autoload() {
-    require_once CLASSES.'Autoloader.php';
-    Autoloader::init();
-    return;
-  }
 
   /**
    * Método para crear un nuevo token de la sesión del usuario
@@ -139,29 +129,6 @@ class Sireci {
   private function init_csrf() {
     $csrf = new Csrf();
     define('CSRF_TOKEN', $csrf->get_token()); // Versión 1.0.2 para uso en aplicaciones
-  }
-
-  /**
-   * Inicializa las globales del sistema
-   *
-   * @return void
-   */
-  private function init_globals() {
-    // Objeto Bee que será insertado en el footer como script javascript dinámico para fácil acceso
-    bee_obj_default_config();
-
-    //////////////////////////////////////////////
-  }
-
-  /**
-   * Usado para carga de procesos personalizados del sistema
-   * funciones, variables, set up
-   *
-   * @return void
-   */
-  private function init_custom() {
-    // Inicializar procesos personalizados del sistema o aplicación
-    // ........
   }
 
   /**
@@ -254,8 +221,8 @@ class Sireci {
    *
    * @return void
    */
-  public static function fly() {
-    $bee = new self();
+  public static function run() {
+    $sireci = new self();
     return;
   }
 }

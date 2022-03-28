@@ -1,8 +1,5 @@
 <?php
 
-//////////////////////////////// 2021
-//////////////////////////////// Joystick
-//////////////////////////////// Bee-Framework
 
 // Definir el uso horario o timezone del sistema
 date_default_timezone_set('America/Lima');
@@ -37,11 +34,23 @@ define('CLASSES'    , ROOT.'classes'.DS);
 define('CONTROLLERS', ROOT.'controllers'.DS);
 define('FUNCTIONS'  , ROOT.'functions'.DS);
 define('MODELS'     , ROOT.'models'.DS);
-// define('LOGS'       , ROOT.'logs'.DS);
+define('CORE'     , ROOT.'core'.DS);
+define('MIDDLEWARES'     , ROOT.'middlewares'.DS);
+define('RESOURCES'     , ROOT.'resources'.DS);
+define('VIEWS'     , ROOT.'views'.DS);
+define('VIEW_MODULES'  , VIEWS.'modules'.DS);
+
+define('LOGS'       , ROOT.'logs'.DS);
 
 
 // Rutas de recursos y assets absolutos
 define('IMAGES_PATH', ROOT.'assets'.DS.'images'.DS);
+define('PROFILE_IMAGES', ROOT.'assets'.DS.'profiles'.DS);
+
+// resources data
+define('BIRTH_CERTIFICATES', ROOT.'resources'.DS.'data'.DS.'birth_certificates'.DS);
+define('MARRIAGE_CERTIFICATES', ROOT.'resources'.DS.'data'.DS.'marriage_certificates'.DS);
+define('DEATH_CERTIFICATES', ROOT.'resources'.DS.'data'.DS.'death_certificates'.DS);
 
 //Rutas de archivos o assets con base URL
 define('ASSETS'     , URL.'assets/');
@@ -56,12 +65,12 @@ define('UPLOADED'   , ASSETS.'uploads/');
 
 // Credenciales de la base de datos
 // Set para conexión local o de desarrollo
-define('LDB_ENGINE' , 'mysql');
-define('LDB_HOST'   , 'localhost');
-define('LDB_NAME'   , '__LOCAL_DB__');
-define('LDB_USER'   , 'root');
-define('LDB_PASS'   , '');
-define('LDB_CHARSET', 'utf8');
+// define('LDB_ENGINE' , 'mysql');
+// define('LDB_HOST'   , 'localhost');
+// define('LDB_NAME'   , '__LOCAL_DB__');
+// define('LDB_USER'   , 'root');
+// define('LDB_PASS'   , '');
+// define('LDB_CHARSET', 'utf8');
 
 // El controlador por defecto / el método por defecto / y el controlador de errores por defecto
 define('DEFAULT_CONTROLLER'      , 'home');
@@ -70,14 +79,14 @@ define('DEFAULT_METHOD'          , 'index');
 
 
 
-echo URL;
-echo "<br>";
-echo REQUEST_URI;
-ECHO "<br>";
-echo $_SERVER['SERVER_PORT'];
-echo "<br>";
-echo REQUEST_URI;
-echo "<br>";
-echo CUR_PAGE;
-echo "<br>";
-echo IMAGES_PATH;
+// echo URL;
+// echo "<br>";
+// echo REQUEST_URI;
+// ECHO "<br>";
+// echo $_SERVER['SERVER_PORT'];
+// echo "<br>";
+// echo REQUEST_URI;
+// echo "<br>";
+// echo CUR_PAGE;
+// echo "<br>";
+// echo IMAGES_PATH;

@@ -7,11 +7,15 @@ class User extends DB_PDO{
     protected $table = "user";
 
     public function login($user, $password){
-        $query = $this->connect()->prepare("SELECT * FROM user WHERE (user_username=:user or user_email=:user ) and user_password=:password and user_state = 1");
-        $query->bindParam(":user",$user);
-        $query->bindParam(":password",$password);
-        $query->execute();
-        return $query;
+        try{
+            $query = $this->connect()->prepare("SELECT * FROM user WHERE (user_username=:user or user_email=:user ) and user_password=:password and user_state = 1");
+            $query->bindParam(":user",$user);
+            $query->bindParam(":password",$password);
+            $query->execute();
+            return $query;
+        }catch(Exception $e){
+            throw $e;
+        }
     }
 
     public function logout(){
@@ -49,14 +53,18 @@ class User extends DB_PDO{
     }
 
     public function exists($column, $search_text){
-        $query = $this->connect()->prepare("SELECT * FROM user WHERE ".$column." =:search_text");
-        $query->bindParam(":search_text",$search_text);
-        $query->execute();
-        if($query->rowCount()>0){
-            return true;
-        }else{
-            return false;
-        }
-        
+        $query = "SELECT * FROM user WHERE ".$column." =:search_text";
+        try{
+            $statement = $this->connect()->prepare($query);
+            $statement->bindParam(":search_text",$search_text);
+            $statement->execute();
+            if($statement->rowCount()>0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception $e){
+            throw $e;
+        }  
     }
 }
