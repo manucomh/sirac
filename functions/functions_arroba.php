@@ -1257,10 +1257,10 @@
         register_scripts(['https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js'] , 'Summernote');
         return true;
     }
-    /*
-    *
-    * validate email
+    /**
     * 
+    * validate email
+    * @return email
     */
         
     function validate_email($email){
@@ -1275,8 +1275,14 @@
     *   @return password
     */
     function validate_password($password){
-        $pass = (preg_match('`[0-9]`', $password))?$password:"invalid pass";
-        return $pass;
+        if(preg_match('`[a-z]`',$password) and preg_match('`[0-9]`',$password)){
+            return $password;
+        }else{
+            return false;
+        }
+        
+        // $pass = (preg_match('`[0-9]`', $password))?$password:false;
+        
     }
 
 
