@@ -34,6 +34,7 @@ class Sireci {
     // $this->init_globals();
     // $this->init_custom();
     $this->dispatch();
+    $this->init_load_csrf();
   }
 
   /**
@@ -57,21 +58,21 @@ class Sireci {
   private function init_load_config() {
     // Carga del archivo de settings inicialmente para establecer las constantes personalizadas
     // desde un comienzo en la ejecución del sitio
-    $file = 'bee_config.php';
-    if(!is_file('app/config/'.$file)) {
-      die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
+    $file = 'config.php';
+    if(!is_file('core/'.$file)) {
+      // die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
 
     // Cargando el archivo de configuración
-    require_once 'app/config/'.$file;
+    require_once 'core/'.$file;
     
     $file = 'settings.php';
-    if(!is_file('app/core/'.$file)) {
+    if(!is_file('core/'.$file)) {
       die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
 
     // Cargando el archivo de configuración
-    require_once 'app/core/'.$file;
+    require_once 'core/'.$file;
 
     return;
   }
@@ -82,18 +83,18 @@ class Sireci {
    * @return void
    */
   private function init_load_functions() {
-    $file = 'bee_core_functions.php';
+    $file = 'functions_arroba.php';
     if(!is_file(FUNCTIONS.$file)) {
       die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
 
-    // Cargando el archivo de funciones core
-    require_once FUNCTIONS.$file;
+    // // Cargando el archivo de funciones core
+    // require_once FUNCTIONS.$file;
 
-    $file = 'bee_custom_functions.php';
-    if(!is_file(FUNCTIONS.$file)) {
-      die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
-    }
+    // $file = 'bee_custom_functions.php';
+    // if(!is_file(FUNCTIONS.$file)) {
+    //   die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
+    // }
 
     // Cargando el archivo de funciones custom
     require_once FUNCTIONS.$file;
@@ -109,13 +110,13 @@ class Sireci {
       return;
     }
 
-    $file = 'app/vendor/autoload.php';
-    if(!is_file($file)) {
-      die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
-    }
+    // $file = 'app/vendor/autoload.php';
+    // if(!is_file($file)) {
+    //   die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
+    // }
 
     // Cargando el archivo de configuración
-    require_once $file;
+    // require_once $file;
 
     return;
   }
@@ -126,9 +127,17 @@ class Sireci {
    *
    * @return void
    */
+  private function init_load_csrf(){
+    $file = CLASSES.'Csrf.php';
+    if(!is_file($file)){
+      die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->system));
+    }
+  }
+  
   private function init_csrf() {
-    $csrf = new Csrf();
-    define('CSRF_TOKEN', $csrf->get_token()); // Versión 1.0.2 para uso en aplicaciones
+    require_once(CLASSES.'Csrf.php');
+    $csrf = new Csrf(); 
+    define('CSRF_TOKEN', $csrf->get_token()); //token
   }
 
   /**
@@ -196,21 +205,21 @@ class Sireci {
 
     /////////////////////////////////////////////////////////////////////////////////
     // Creando constantes para utilizar más adelante
-    define('CONTROLLER', $current_controller);
-    define('METHOD'    , $current_method);
+    // define('CONTROLLER', $current_controller);
+    // define('METHOD'    , $current_method);
 
     /////////////////////////////////////////////////////////////////////////////////
     // Ejecutando controlador y método según se haga la petición
-    $controller = new $controller;
+    // $controller = new $controller;
 
     // Obteniendo los parametros de la URI
     $params = array_values(empty($this->uri) ? [] : $this->uri);
 
     // Llamada al método que solicita el usuario en curso
     if(empty($params)) {
-      call_user_func([$controller, $current_method]);
+      // call_user_func([$controller, $current_method]);
     } else {
-      call_user_func_array([$controller, $current_method], $params);
+      // call_user_func_array([$controller, $current_method], $params);
     }
 
     return; // Línea final todo sucede entre esta línea y el comienzo
