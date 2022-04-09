@@ -29,7 +29,7 @@
 
     function clean_chain($chain){
         $chain=preg_replace(['/\s+/','/^\s|\s$/'],[' ',''], $chain);//limpiar espacios entre palabras
-        $chain=trim($chain); //quitar los espaicos en blanco
+        $chain=trim($chain); //quitar los espacios en blanco
         $chain=stripslashes($chain); //quitar barras invertidas
         $chain=str_ireplace("<script>","", $chain); //remplezar los valores
         $chain=str_ireplace("</script>","", $chain); //remplezar los valores
@@ -158,6 +158,9 @@
      *
      * @return string
      */
+    function get_sitename() {
+        return SYSTEM_NAME;
+    }
     
     /**
      * Devuelve el email general del sistema
@@ -272,7 +275,7 @@
      * @return void
      */
     function get_module($view, $data = []) {
-        $file_to_include = VIEW_MODULES.$view.'Module.php';
+        $file_to_include = MODULES.$view.'Module.php';
         $output = '';
         
         // Por si queremos trabajar con objeto

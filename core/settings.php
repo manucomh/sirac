@@ -37,8 +37,10 @@ define('MODELS'     , ROOT.'models'.DS);
 define('CORE'     , ROOT.'core'.DS);
 define('MIDDLEWARES'     , ROOT.'middlewares'.DS);
 define('RESOURCES'     , ROOT.'resources'.DS);
-define('VIEWS'     , ROOT.'views'.DS);
-define('VIEW_MODULES'  , VIEWS.'modules'.DS);
+define('TEMPLATES'     , ROOT.'templates'.DS);
+define('VIEWS'     , TEMPLATES.'views'.DS);
+define('MODULES'  , TEMPLATES.'modules'.DS);
+define('INCLUDES',TEMPLATES.'includes'.DS);
 
 define('LOGS'       , ROOT.'logs'.DS);
 
