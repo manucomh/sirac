@@ -15,7 +15,7 @@ define('SYSTEM_VERSION', '1.0.0');
 
 // Ruta base de nuestro proyecto
 // Esta constante ahora es configurada desde el archivo settings.php
-define('BASEPATH','/registrocivil/');
+// define('BASEPATH','/registrocivil/');
 
 // Puerto y la URL del sitio
 define('PORT'       , isset($_SERVER['SERVER_PORT'])?'80':''); // Puerto por defecto de Prepros <2020
@@ -67,28 +67,14 @@ define('UPLOADED'   , ASSETS.'uploads/');
 
 // Credenciales de la base de datos
 // Set para conexión local o de desarrollo
-// define('LDB_ENGINE' , 'mysql');
-// define('LDB_HOST'   , 'localhost');
-// define('LDB_NAME'   , '__LOCAL_DB__');
-// define('LDB_USER'   , 'root');
-// define('LDB_PASS'   , '');
-// define('LDB_CHARSET', 'utf8');
+define('LDB_ENGINE' , 'mysql');
+define('LDB_HOST'   , 'localhost');
+define('LDB_NAME'   , '');
+define('LDB_USER'   , '');
+define('LDB_PASS'   , '');
+define('LDB_CHARSET', 'utf8');
 
 // El controlador por defecto / el método por defecto / y el controlador de errores por defecto
-define('DEFAULT_CONTROLLER'      , 'home');
-define('DEFAULT_ERROR_CONTROLLER', 'error');
+define('DEFAULT_CONTROLLER'      , 'Login');
+define('DEFAULT_ERROR_CONTROLLER', 'Error');
 define('DEFAULT_METHOD'          , 'index');
-
-
-
-// echo URL;
-// echo "<br>";
-// echo REQUEST_URI;
-// ECHO "<br>";
-// echo $_SERVER['SERVER_PORT'];
-// echo "<br>";
-// echo REQUEST_URI;
-// echo "<br>";
-// echo CUR_PAGE;
-// echo "<br>";
-// echo IMAGES_PATH;

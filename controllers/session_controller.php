@@ -1,7 +1,7 @@
 <?php
 require_once './core/db_model.php';
 
-class Session extends DB_PDO{
+class Session_controller extends DB_PDO{
 
    public function login($user,$password){
       return;

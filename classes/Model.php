@@ -1,6 +1,6 @@
 <?php 
 
-class Model extends DB_PDO {
+class Model extends DB {
 
 
   /**
