@@ -1,13 +1,8 @@
 <?php
 
-//////////////////////////////// 2021
-//////////////////////////////// Joystick
-//////////////////////////////// Bee-Framework
 
 // Definir el uso horario o timezone del sistema
 date_default_timezone_set('America/Lima');
-
-define('PREPROS'     , false); // Activar en caso de trabajar el desarrollo en prepros como servidor local
 
 // Lenguaje
 // define('SITE_LANG'   , $this->lng);
@@ -18,7 +13,7 @@ define('SYSTEM_VERSION', '1.0.0');
 
 // Ruta base de nuestro proyecto
 // Esta constante ahora es configurada desde el archivo settings.php
-define('BASEPATH','/registrocivil/');
+// define('BASEPATH','/registrocivil/');
 
 // Puerto y la URL del sitio
 define('PORT'       , isset($_SERVER['SERVER_PORT'])?'80':''); // Puerto por defecto de Prepros <2020
@@ -37,11 +32,25 @@ define('CLASSES'    , ROOT.'classes'.DS);
 define('CONTROLLERS', ROOT.'controllers'.DS);
 define('FUNCTIONS'  , ROOT.'functions'.DS);
 define('MODELS'     , ROOT.'models'.DS);
-// define('LOGS'       , ROOT.'logs'.DS);
+define('CORE'     , ROOT.'core'.DS);
+define('MIDDLEWARES'     , ROOT.'middlewares'.DS);
+define('RESOURCES'     , ROOT.'resources'.DS);
+define('TEMPLATES'     , ROOT.'templates'.DS);
+define('VIEWS'     , TEMPLATES.'views'.DS);
+define('MODULES'  , TEMPLATES.'modules'.DS);
+define('INCLUDES',TEMPLATES.'includes'.DS);
+
+define('LOGS'       , ROOT.'logs'.DS);
 
 
 // Rutas de recursos y assets absolutos
 define('IMAGES_PATH', ROOT.'assets'.DS.'images'.DS);
+define('PROFILE_IMAGES', ROOT.'assets'.DS.'profiles'.DS);
+
+// resources data
+define('BIRTH_CERTIFICATES', ROOT.'resources'.DS.'data'.DS.'birth_certificates'.DS);
+define('MARRIAGE_CERTIFICATES', ROOT.'resources'.DS.'data'.DS.'marriage_certificates'.DS);
+define('DEATH_CERTIFICATES', ROOT.'resources'.DS.'data'.DS.'death_certificates'.DS);
 
 //Rutas de archivos o assets con base URL
 define('ASSETS'     , URL.'assets/');
@@ -58,26 +67,12 @@ define('UPLOADED'   , ASSETS.'uploads/');
 // Set para conexión local o de desarrollo
 define('LDB_ENGINE' , 'mysql');
 define('LDB_HOST'   , 'localhost');
-define('LDB_NAME'   , '__LOCAL_DB__');
-define('LDB_USER'   , 'root');
+define('LDB_NAME'   , '');
+define('LDB_USER'   , '');
 define('LDB_PASS'   , '');
 define('LDB_CHARSET', 'utf8');
 
 // El controlador por defecto / el método por defecto / y el controlador de errores por defecto
-define('DEFAULT_CONTROLLER'      , 'home');
+define('DEFAULT_CONTROLLER'      , 'login');
 define('DEFAULT_ERROR_CONTROLLER', 'error');
 define('DEFAULT_METHOD'          , 'index');
-
-
-
-echo URL;
-echo "<br>";
-echo REQUEST_URI;
-ECHO "<br>";
-echo $_SERVER['SERVER_PORT'];
-echo "<br>";
-echo REQUEST_URI;
-echo "<br>";
-echo CUR_PAGE;
-echo "<br>";
-echo IMAGES_PATH;

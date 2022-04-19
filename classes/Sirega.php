@@ -1,6 +1,6 @@
 <?php 
 
-class Sireci {
+class Sirega {
 
   // Propiedades del SISTEMA
   // Desarrollado por el equipo Consultora Arroba E. I. R. L.
@@ -8,7 +8,7 @@ class Sireci {
    * @var string
    */
   private $system    = 'SIRECI'; // Ahora este solo será el nombre del sistema
-  private $version      = '1.1';         // versión actual del sistema
+  private $version      = '1.0';         // versión actual del sistema
   private $lng          = 'es';
   private $uri          = [];
   private $use_composer = true;
@@ -31,9 +31,10 @@ class Sireci {
     $this->init_load_composer();
     $this->init_autoload();
     $this->init_csrf();
-    $this->init_globals();
-    $this->init_custom();
+    // $this->init_globals();
+    // $this->init_custom();
     $this->dispatch();
+    $this->init_load_csrf();
   }
 
   /**
@@ -57,21 +58,21 @@ class Sireci {
   private function init_load_config() {
     // Carga del archivo de settings inicialmente para establecer las constantes personalizadas
     // desde un comienzo en la ejecución del sitio
-    $file = 'bee_config.php';
-    if(!is_file('app/config/'.$file)) {
+    $file = 'sireci_config.php';
+    if(!is_file('core/'.$file)) {
       die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
 
     // Cargando el archivo de configuración
-    require_once 'app/config/'.$file;
+    require_once 'core/'.$file;
     
     $file = 'settings.php';
-    if(!is_file('app/core/'.$file)) {
+    if(!is_file('core/'.$file)) {
       die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
 
     // Cargando el archivo de configuración
-    require_once 'app/core/'.$file;
+    require_once 'core/'.$file;
 
     return;
   }
@@ -82,21 +83,21 @@ class Sireci {
    * @return void
    */
   private function init_load_functions() {
-    $file = 'bee_core_functions.php';
+    $file = 'functions_arroba.php';
     if(!is_file(FUNCTIONS.$file)) {
       die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
 
-    // Cargando el archivo de funciones core
+    // // Cargando el archivo de funciones core
     require_once FUNCTIONS.$file;
 
     $file = 'bee_custom_functions.php';
     if(!is_file(FUNCTIONS.$file)) {
-      die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
+      // die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
 
     // Cargando el archivo de funciones custom
-    require_once FUNCTIONS.$file;
+    // require_once FUNCTIONS.$file;
 
     return;
   }
@@ -109,13 +110,13 @@ class Sireci {
       return;
     }
 
-    $file = 'app/vendor/autoload.php';
-    if(!is_file($file)) {
-      die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
-    }
+    // $file = 'app/vendor/autoload.php';
+    // if(!is_file($file)) {
+    //   die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
+    // }
 
     // Cargando el archivo de configuración
-    require_once $file;
+    // require_once $file;
 
     return;
   }
@@ -136,32 +137,17 @@ class Sireci {
    *
    * @return void
    */
+  private function init_load_csrf(){
+    $file = CLASSES.'Csrf.php';
+    if(!is_file($file)){
+      die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->system));
+    }
+  }
+  
   private function init_csrf() {
-    $csrf = new Csrf();
-    define('CSRF_TOKEN', $csrf->get_token()); // Versión 1.0.2 para uso en aplicaciones
-  }
-
-  /**
-   * Inicializa las globales del sistema
-   *
-   * @return void
-   */
-  private function init_globals() {
-    // Objeto Bee que será insertado en el footer como script javascript dinámico para fácil acceso
-    bee_obj_default_config();
-
-    //////////////////////////////////////////////
-  }
-
-  /**
-   * Usado para carga de procesos personalizados del sistema
-   * funciones, variables, set up
-   *
-   * @return void
-   */
-  private function init_custom() {
-    // Inicializar procesos personalizados del sistema o aplicación
-    // ........
+    require_once(CLASSES.'Csrf.php');
+    $csrf = new Csrf(); 
+    define('CSRF_TOKEN', $csrf->get_token()); //token
   }
 
   /**
@@ -199,23 +185,20 @@ class Sireci {
     } else {
       $current_controller = DEFAULT_CONTROLLER; // home Controler.php
     }
-
     // Ejecución del controlador
     // Verificamos si existe una clase con el controlador solicitado
-    $controller = $current_controller.'Controller'; // homeController
+    $controller = $current_controller.'_controller'; // homeController
     if(!class_exists($controller)) {
       $current_controller = DEFAULT_ERROR_CONTROLLER; // Para que el CONTROLLER sea error
-      $controller = DEFAULT_ERROR_CONTROLLER.'Controller'; // errorController
+      $controller = DEFAULT_ERROR_CONTROLLER.'_controller'; // errorController
     }
-
     /////////////////////////////////////////////////////////////////////////////////
     // Ejecución del método solicitado
     if(isset($this->uri[1])) {
       $method = str_replace('-', '_', $this->uri[1]);
-      
       // Existe o no el método dentro de la clase a ejecutar (controllador)
       if(!method_exists($controller, $method)) {
-        $controller         = DEFAULT_ERROR_CONTROLLER.'Controller'; // errorController
+        $controller         = DEFAULT_ERROR_CONTROLLER.'_controller'; // errorController
         $current_method     = DEFAULT_METHOD; // index
         $current_controller = DEFAULT_ERROR_CONTROLLER;
       } else {
@@ -231,17 +214,18 @@ class Sireci {
     // Creando constantes para utilizar más adelante
     define('CONTROLLER', $current_controller);
     define('METHOD'    , $current_method);
+    
 
     /////////////////////////////////////////////////////////////////////////////////
     // Ejecutando controlador y método según se haga la petición
-    $controller = new $controller;
+    // $controller = new $controller;
 
     // Obteniendo los parametros de la URI
     $params = array_values(empty($this->uri) ? [] : $this->uri);
-
+    
     // Llamada al método que solicita el usuario en curso
     if(empty($params)) {
-      call_user_func([$controller, $current_method]);
+      call_user_func([$controller, $current_method]);   /// or array($controller, $current_method)
     } else {
       call_user_func_array([$controller, $current_method], $params);
     }
@@ -254,8 +238,8 @@ class Sireci {
    *
    * @return void
    */
-  public static function fly() {
-    $bee = new self();
+  public static function run() {
+    $sireci = new self();
     return;
   }
 }
