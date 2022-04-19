@@ -3,10 +3,17 @@
 
 class View {
     
-    public static function render($view, $data = []){
-        $d = to_object($data);      //data en array assoc o $d en objetos
-        if(!is_file(VIEWS.CONTROLLERS.DS.$view.'_view.php')) {
-            
+    public static function render($view, $data = [])
+    {
+        // Convertir el array asociativo en objeto
+        $d = to_object($data); // $data en array assoc o $d en objectos
+
+        if(!is_file(VIEWS.CONTROLLER.DS.$view.'View.php')) {
+        echo VIEWS.CONTROLLER.DS.$view.'View.php';
+        die(sprintf('No existe la vista "%sView" en la carpeta "%s".', $view, CONTROLLER));
         }
+
+        require_once VIEWS.CONTROLLER.DS.$view.'View.php';
+        exit(); 
     }
 }
