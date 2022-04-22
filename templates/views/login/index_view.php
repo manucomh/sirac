@@ -134,13 +134,14 @@
 
 <style>
     .login_header{
-        height: 50px; 
+        height: 70px; 
         width: 100%; 
         position: absolute; 
         background: #16a085;
         z-index: 9999;
     }
     .display_flex_header_login{
+        position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -155,28 +156,59 @@
     .display_flex_header_login .municipality_name{
         padding: 0px 5px;
     }
+    .display_flex_header_login .municipality_name .system_name{
+        font-weight: 400;
+        font-family: "Roboto", sans-serif, monospace;
+        font-size: 1.3rem;
+        padding: 0rem .3rem;
+    }
+    .wrapper .title span{
+        font-family: 'Roboto', sans-serif;
+    }
+    .left .muni_name{
+        font-size: 1.2rem;
+    }
+    .display_flex_header_login .left{
+        float: right;
+        display: block;
+        width: auto;
+        height: auto;
+        right: 20px;
+        padding: 0px 20px;
+        position: absolute;
+    }
+    @media only screen and (max-width: 768px) {
+        .left .muni_name {
+            display: none;
+            visibility: hidden;
+        }
+    }
 </style>
+
+
+<?php require_once INCLUDES."inc_head_html.php"; ?>
 <div class="login_header">
     <div class="display_flex_header_login">
         <div class="title_login_sismuni rigth">
             <img src="" alt="">
-            <label>.:.</label>
+            <label>.:</label>
         </div>
         <div class="center municipality_name">
-            <label>Municipalidad Distrital San Jerónimo</label>
+            <label for="" class="system_name">SIRAC - Sistema de Registro de Actas</label>
         </div>
-        <div class="left"></div>
+        <div class="left">
+            <label for="" class="muni_name"> Municipalidad Distrital San Jerónimo</label>
+        </div>
     </div>
 </div>
 
 <div class="container_login_form">
     <div class="container">
-        
         <div class="wrapper">
             <div class="title">
-                <span>SISMUNI - Login</span>
+                <span><?php echo "" ?> - Login -</span>
             </div>
-            <form action="#" method="POST">
+            <form action="" method="POST">
                 
                 <div class="row">
                     <label>
@@ -226,3 +258,4 @@
         </div>
     </div>
 </div>
+<?php require_once INCLUDES."inc_footer.php"; ?>

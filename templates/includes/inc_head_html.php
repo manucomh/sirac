@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo "es"; ?>">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <?php
-        require_once(INCLUDES.'inc_head_html.php');
-    ?>
+  <!-- Agregar basepath para definir a partir de donde se deben generar los enlaces y la carga de archivos -->
+  <base href="<?php echo BASEPATH; ?>">
+
+  <meta charset="UTF-8">
+  
+  <title><?php echo isset($d->title) ? $d->title.' - '.get_sitename() : 'Bienvenido - '.get_sitename(); ?></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- inc_styles.php -->
+  <?php require_once INCLUDES.'inc_styles.php'; ?>
 </head>
-<body>
+
+<body class="<?php echo isset($d->bg) && $d->bg === 'dark' ? 'bg-dark' : 'bg-light' ?>" style="<?php echo 'padding: '.(isset($d->padding) ? $d->padding : '0px 0px'); ?>">
+<!-- ends inc_header.php -->1
     

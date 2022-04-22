@@ -1,7 +1,7 @@
 
 <?php
     
-    require_once('classes/Sireci.php');
+    require_once('classes/Sirac.php');
     
-    Sireci::run();
+    Sirac::run();
 

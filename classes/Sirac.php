@@ -1,13 +1,13 @@
 <?php 
 
-class Sireci {
+class Sirac {
 
   // Propiedades del SISTEMA
   // Desarrollado por el equipo Consultora Arroba E. I. R. L.
   /**
    * @var string
    */
-  private $system    = 'SIRECI'; // Ahora este solo será el nombre del sistema
+  private $system    = 'SIRAC'; // Nombre del sistema
   private $version      = '1.0';         // versión actual del sistema
   private $lng          = 'es';
   private $uri          = [];
