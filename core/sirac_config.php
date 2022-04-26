@@ -14,7 +14,7 @@ define('IS_DEMO'      , false);
 // Set para conexión en producción o servidor real
 define('DB_ENGINE'    , 'mysql');
 define('DB_HOST'      , 'localhost');
-define('DB_NAME'      , 'registrocivil');  //___REMOTE DB___
+define('DB_NAME'      , 'sirac');  //___REMOTE DB___
 define('DB_USER'      , 'root');  //___REMOTE DB___
 define('DB_PASS'      , '');  //___REMOTE DB___
 define('DB_CHARSET'   , 'utf8');  //___REMOTE CHARTSET___

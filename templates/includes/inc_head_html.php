@@ -16,5 +16,5 @@
 </head>
 
 <body class="<?php echo isset($d->bg) && $d->bg === 'dark' ? 'bg-dark' : 'bg-light' ?>" style="<?php echo 'padding: '.(isset($d->padding) ? $d->padding : '0px 0px'); ?>">
-<!-- ends inc_header.php -->1
+<!-- ends inc_header.php -->
     

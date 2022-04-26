@@ -1,5 +1,5 @@
 <?php
-require_once('core/db_model.php');
+// require_once('classes/Db_model.php');
 class Login_controller extends DB_PDO {
 
     public function __construct(){

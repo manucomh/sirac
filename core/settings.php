@@ -75,6 +75,6 @@ define('LDB_PASS'   , '');
 define('LDB_CHARSET', 'utf8');
 
 // El controlador por defecto / el método por defecto / y el controlador de errores por defecto
-define('DEFAULT_CONTROLLER'      , 'Login');
-define('DEFAULT_ERROR_CONTROLLER', 'Error');
+define('DEFAULT_CONTROLLER'      , 'login');
+define('DEFAULT_ERROR_CONTROLLER', 'error');
 define('DEFAULT_METHOD'          , 'index');

@@ -58,7 +58,7 @@ class Sirac {
   private function init_load_config() {
     // Carga del archivo de settings inicialmente para establecer las constantes personalizadas
     // desde un comienzo en la ejecución del sitio
-    $file = 'sireci_config.php';
+    $file = 'sirac_config.php';
     if(!is_file('core/'.$file)) {
       die(sprintf('El archivo %s no se encuentra, es requerido para que %s funcione.', $file, $this->framework));
     }
@@ -129,7 +129,6 @@ class Sirac {
   private function init_autoload() {
     require_once CLASSES.'Autoloader.php';
     Autoloader::init();
-    echo "autoloader";
     return;
   }
 

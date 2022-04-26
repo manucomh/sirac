@@ -1,8 +1,8 @@
 <?php 
-
-class Error_ontroller extends Controller {
+class Error_controller extends Controller {
   function __construct()
   {
+    
   }
   
   function index() {
@@ -11,6 +11,7 @@ class Error_ontroller extends Controller {
       'title' => 'Página no encontrada',
       'bg'    => 'dark'
     ];
+    echo "error render";
     View::render('404', $data);
-  }
+  }  
 }

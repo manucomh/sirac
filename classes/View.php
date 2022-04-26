@@ -9,8 +9,8 @@ class View {
         $d = to_object($data); // $data en array assoc o $d en objectos
 
         if(!is_file(VIEWS.CONTROLLER.DS.$view.'_view.php')) {
-        echo VIEWS.CONTROLLER.DS.$view.'_view.php';
-        die(sprintf('No existe la vista "%sView" en la carpeta "%s".', $view, CONTROLLER));
+            echo VIEWS.CONTROLLER.DS.$view.'_view.php';
+            die(sprintf('No existe la vista "%sView" en la carpeta "%s".', $view, CONTROLLER));
         }
 
         require_once VIEWS.CONTROLLER.DS.$view.'_view.php';
