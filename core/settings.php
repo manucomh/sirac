@@ -10,8 +10,9 @@ define('PREPROS'     , false); // Activar en caso de trabajar el desarrollo en p
 // define('SITE_LANG'   , $this->lng);
 
 // Versión de la aplicación
-define('SYSTEM_NAME'   , 'REGISTRO CIVIL');    
-define('SYSTEM_VERSION', '1.0.0');          
+define('SYSTEM_NAME'   , 'SIRAC');    
+define('SYSTEM_FULLNAME','Sistema de Registro de Actas');
+define('SYSTEM_VERSION', '1.0');          
 
 // Ruta base de nuestro proyecto
 // Esta constante ahora es configurada desde el archivo settings.php

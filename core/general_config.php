@@ -2,7 +2,7 @@
 
 	//Ruta del proyecto
 	// const BASE_URL = "http://localhost/";
-	const TITLE = "REGISTRO CIVIL";
+	// const TITLE = "REGISTRO CIVIL";
 	//Zona horaria
     date_default_timezone_set ("America/Lima");
     

@@ -8,10 +8,10 @@ class Error_controller extends Controller {
   function index() {
     $data =
     [
-      'title' => 'Página no encontrada',
+      'message' => 'Página no encontrada',
+      'error-type' =>"Error 404",
       'bg'    => 'dark'
     ];
-    echo "error render";
     View::render('404', $data);
   }  
 }

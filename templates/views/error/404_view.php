@@ -22,6 +22,10 @@
     }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+<?php
+    require_once(INCLUDES."inc_head_html.php");
+
+?>
 <div class="container_404">
     <div>
         <p class="text-center">
@@ -31,8 +35,8 @@
                 </svg>
             </i>
         </p>
-        <h1 class="text-center">ERROR 404</h1>
-        <p class="text text-center">Page not found</p>
+        <h1 class="text-center"><?php echo $data['error-type']  ?></h1>
+        <p class="text text-center"><?php echo $data['message'];?></p>   <!--  Page not found -->
 
     </div>
 </div>

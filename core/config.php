@@ -2,7 +2,7 @@
 	
 	//Datos de conexion a base de datos
 	const DB_HOST = "127.0.0.1";	//localhost
-	const DB_NAME = "registrocivil";
+	const DB_NAME = "sirac";
     const DB_USER = "root";
 	const DB_PASSWORD = "";
 	const SGBD="mysql:host=".DB_HOST.";dbname=".DB_NAME;

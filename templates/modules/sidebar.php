@@ -1,7 +1,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar elevation-2 sidebar-dark-primary">
     <!-- Brand Logo -->
-    <a href="<?= base_url(); ?>/dashboard/" class="brand-link">
+    <a href="<?= BASEPATH; ?>/dashboard/" class="brand-link">
       <img src="<?= $_SESSION['logotype_str'] ?>" alt="<?= $_SESSION['company_str'] ?>" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light logotype-title"><?= limit_text_string($_SESSION['company_str'],16,".") ?></span>
     </a>
@@ -16,7 +16,7 @@
         ?>
           <!-- Inicio--->
           <li class="nav-item">
-            <a href="<?= base_url(); ?>/dashboard/" class="nav-link <?php if($current[0]=="dashboard") echo"active"; ?>">
+            <a href="<?= BASEPATH; ?>/dashboard/" class="nav-link <?php if($current[0]=="dashboard") echo"active"; ?>">
               <i class="nav-icon fa fa-tachometer-alt"></i><p> Inicio</p>
             </a>
           </li>
@@ -31,19 +31,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_purchases/" class="nav-link  <?php if($current[0]=="manage_purchases") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_purchases/" class="nav-link  <?php if($current[0]=="manage_purchases") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compras</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_provider/" class="nav-link  <?php if($current[0]=="manage_provider") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_provider/" class="nav-link  <?php if($current[0]=="manage_provider") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Proveedores</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/consult_purchases/" class="nav-link <?php if($current[0]=="consult_purchases") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/consult_purchases/" class="nav-link <?php if($current[0]=="consult_purchases") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Consultar ingresos</p>
                 </a>
               </li>
@@ -58,22 +58,22 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/register_sale/" class="nav-link <?php if($current[0]=="register_sale") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/register_sale/" class="nav-link <?php if($current[0]=="register_sale") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i> <p>Punto de  venta</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/sales_list/" class="nav-link <?php if($current[0]=="sales_list") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/sales_list/" class="nav-link <?php if($current[0]=="sales_list") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Salidas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_clients/" class="nav-link <?php if($current[0]=="manage_clients") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_clients/" class="nav-link <?php if($current[0]=="manage_clients") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Clientes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/consult_sales/" class="nav-link <?php if($current[0]=="consult_sales") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/consult_sales/" class="nav-link <?php if($current[0]=="consult_sales") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Consultar salidas</p>
                 </a>
               </li>
@@ -88,17 +88,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_product/" class="nav-link <?php if($current[0]=="manage_product") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_product/" class="nav-link <?php if($current[0]=="manage_product") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i> <p>Productos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_lote/" class="nav-link <?php if($current[0]=="manage_lote") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_lote/" class="nav-link <?php if($current[0]=="manage_lote") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Lotes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_category/" class="nav-link <?php if($current[0]=="manage_category") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_category/" class="nav-link <?php if($current[0]=="manage_category") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Tipo</p>
                 </a>
               </li>
@@ -113,12 +113,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_presentation/" class="nav-link <?php if($current[0]=="manage_presentation") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_presentation/" class="nav-link <?php if($current[0]=="manage_presentation") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i> <p>Presentación</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_laboratory/" class="nav-link <?php if($current[0]=="manage_laboratory") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_laboratory/" class="nav-link <?php if($current[0]=="manage_laboratory") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Laboratorios</p>
                 </a>
               </li>
@@ -126,7 +126,7 @@
           </li>
           <!-- Mantenimiento Usuarios--->
           <li class="nav-item">
-            <a href="<?= base_url(); ?>/manage_user/" class="nav-link <?php if($current[0]=="manage_user") echo"active"; ?>">
+            <a href="<?= BASEPATH; ?>/manage_user/" class="nav-link <?php if($current[0]=="manage_user") echo"active"; ?>">
               <i class="nav-icon fa fa-users"></i><p> Usuarios</p>
             </a>
           </li>
@@ -139,12 +139,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/sales_reports/" class="nav-link <?php if($current[0]=="sales_reports") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/sales_reports/" class="nav-link <?php if($current[0]=="sales_reports") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i> <p> Grafico de ventas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/purchases_reports/" class="nav-link <?php if($current[0]=="purchases_reports") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/purchases_reports/" class="nav-link <?php if($current[0]=="purchases_reports") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p> Grafico de compras</p>
                 </a>
               </li>
@@ -159,12 +159,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_company/" class="nav-link <?php if($current[0]=="manage_company") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_company/" class="nav-link <?php if($current[0]=="manage_company") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i> <p>Datos generales</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/manage_voucher/" class="nav-link <?php if($current[0]=="manage_voucher") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/manage_voucher/" class="nav-link <?php if($current[0]=="manage_voucher") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Comprobantes</p>
                 </a>
               </li>
@@ -175,7 +175,7 @@
           ?>
           <!-- Inicio--->
           <li class="nav-item">
-            <a href="<?= base_url(); ?>/dashboard/" class="nav-link <?php if($current[0]=="dashboard") echo"active"; ?>">
+            <a href="<?= BASEPATH; ?>/dashboard/" class="nav-link <?php if($current[0]=="dashboard") echo"active"; ?>">
               <i class="nav-icon fa fa-tachometer-alt"></i><p> Inicio</p>
             </a>
           </li>
@@ -188,12 +188,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/register_sale/" class="nav-link <?php if($current[0]=="register_sale") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/register_sale/" class="nav-link <?php if($current[0]=="register_sale") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i> <p>Nueva venta</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url(); ?>/sales_list/" class="nav-link <?php if($current[0]=="sales_list") echo"active"; ?>">
+                <a href="<?= BASEPATH; ?>/sales_list/" class="nav-link <?php if($current[0]=="sales_list") echo"active"; ?>">
                   <i class="far fa-circle nav-icon"></i><p>Ventas</p>
                 </a>
               </li>
@@ -201,13 +201,13 @@
           </li>
           <!-- Mantenimiento Clientes--->
           <li class="nav-item">
-            <a href="<?= base_url(); ?>/manage_clients/" class="nav-link <?php if($current[0]=="manage_clients") echo"active"; ?>">
+            <a href="<?= BASEPATH; ?>/manage_clients/" class="nav-link <?php if($current[0]=="manage_clients") echo"active"; ?>">
               <i class="nav-icon fa fa-users"></i><p> Clientes</p>
             </a>
           </li>
           <!-- Mantenimiento Clientes--->
           <li class="nav-item">
-            <a href="<?= base_url(); ?>/product_catalog/" class="nav-link <?php if($current[0]=="product_catalog") echo"active"; ?>">
+            <a href="<?= BASEPATH; ?>/product_catalog/" class="nav-link <?php if($current[0]=="product_catalog") echo"active"; ?>">
               <i class="nav-icon fa fa-capsules"></i><p> Catalogo</p>
             </a>
           </li>
