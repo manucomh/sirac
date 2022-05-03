@@ -12,7 +12,7 @@ define('PREPROS'     , false); // Activar en caso de trabajar el desarrollo en p
 // Versión de la aplicación
 define('SYSTEM_NAME'   , 'SIRAC');    
 define('SYSTEM_FULLNAME','Sistema de Registro de Actas');
-define('SYSTEM_VERSION', '1.0');          
+define('SYSTEM_VERSION', 'v1.0');          
 
 // Ruta base de nuestro proyecto
 // Esta constante ahora es configurada desde el archivo settings.php

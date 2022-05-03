@@ -26,11 +26,6 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Poppins',sans-serif;
-    }
-    body{
-        background: #f1f1f1;/*#1abc9c;  */
-        overflow: hidden;
     }
     ::selection{
         background: rgba(26,188,156,0.3);
@@ -199,9 +194,9 @@
         }
     }
 </style>
-<style>
 
-</style>
+<?php echo '<link rel="stylesheet" href="'.CSS.'header_main_style.css">'; ?>
+<?php echo '<link rel="stylesheet" href="'.CSS.'sidebar_main_style.css">'; ?>
 </head>
 
 <body class="<?php echo isset($d->bg) && $d->bg === 'dark' ? 'bg-dark' : 'bg-light' ?>" style="<?php echo 'padding: '.(isset($d->padding) ? $d->padding : '0px 0px'); ?>">
