@@ -6,9 +6,12 @@
     <div class="containerbody_panel">
         
         <!-- panel de nacimiento -->
-        <div class="main_panel_birth">
-            
-        </div>
+
+        <h3 style="">Usuarios</h3>
+        <div><?php echo $data['module']; ?></div>
+        <?php echo BASEPATH; ?>
+        <div>.....</div>
+        <div>.....</div>  
     </div>
 </div>
 

@@ -1,13 +1,18 @@
 
 <?php require_once INCLUDES."inc_head_html.php"; ?>
-<div class="login_header">
-    <div class="display_flex_header_login">
+<div class="login_header w-full relative">
+    <div class="display_flex_header_login relative">
         <div class="title_login_sismuni rigth">
             <img src="" alt="">
-            <label>.:</label>
+            <!-- <label>.:</label> -->
         </div>
         <div class="center municipality_name">
-            <label for="" class="system_name"><?php echo SYSTEM_NAME." ". " - ".SYSTEM_FULLNAME;?></label>
+            <label for="" class="system_name font-bold">
+                <?php echo SYSTEM_NAME." v1.0". "   :: ";?>
+            </label>
+            <label for="" class="text-lg">
+                <?php echo SYSTEM_FULLNAME;?>
+            </label>
         </div>
         <div class="left">
             <label for="" class="muni_name"> Municipalidad Distrital San Jerónimo</label>
@@ -15,14 +20,14 @@
     </div>
 </div>
 
-<div class="container_login_form">
-    <div class="container">
-        <div class="wrapper">
+<div class="container_login_form relative">
+    <div class="container w-11/12 max-w-xs relative">
+        <div class="wrapper relative">
             <div class="title">
                 <span><?php echo "" ?> - Login -</span>
             </div>
             <?php echo Flasher::flash(); ?> 
-            <form action="/sirac/login/post_login" method="POST">
+            <form action="/sirac/login/post_login" method="POST" class="relative">
                 <?php echo insert_inputs(); ?>
                 <div class="row">
                     <label>
@@ -72,4 +77,3 @@
         </div>
     </div>
 </div>
-<?php require_once INCLUDES."inc_footer.php"; ?>

@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 <style>
     *{
         font-family: "Roboto", sans-serif;
@@ -26,7 +20,7 @@
         min-height: calc(100vh - 25px);
         height: calc(100vh - 25px);
         box-sizing: border-box;
-        width: 100vh;
+        width: 100%;
         -webkit-flex-direction: row;
         z-index: 1;
     }
@@ -43,7 +37,33 @@
         overflow-y: auto;
         overflow-x: hidden;
         z-index: 99;
-        /* flex-flow: row wrap; */
-        /* flex-wrap: wrap;  */
     }
+
+
+
+    /* footer */
+    .footer-sirac{
+        height: 25px;
+        width: 100%;
+        display: block;
+        background: rgba(2, 77, 131, 1);
+        box-sizing: border-box;
+    }
+    .footer-sirac .p-large{
+        height: 100%;
+        font-size: .8rem;
+        text-align: center;
+        vertical-align: middle;
+        padding: .25rem 0rem;
+        color: #d1d1d1;
+        height: 100%;
+    }
+    .footer-sirac .p-large a{
+        text-decoration: none;
+        color: #d1d1d1;
+    }
+    .footer-sirac .p-large a:hover{
+        color: #fff;
+    }
+
 </style>

@@ -6,8 +6,8 @@
     <div class="containerbody_panel">
         
         <!-- panel de nacimiento -->
-        <div class="main_panel_birth">
-            
+        <div class="main_panel_marriage">
+
         </div>
     </div>
 </div>

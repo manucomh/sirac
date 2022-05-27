@@ -8,7 +8,7 @@
  * configuración especial en producción
  */
 define('IS_LOCAL'     , in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']));
-define('BASEPATH'     , IS_LOCAL ? '/sirac/' : '____EL BASEPATH EN PRODUCCIÓN___');
+define('BASEPATH'     , IS_LOCAL ? '/sirac/' : '/sirac/');
 define('IS_DEMO'      , false);
 
 // Set para conexión en producción o servidor real

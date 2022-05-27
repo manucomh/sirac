@@ -1,0 +1,157 @@
+.login_header{
+    height: 55px; 
+    width: 100%; 
+    background: #16a085;
+    z-index: 9999;
+}
+.display_flex_header_login{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+    color: #efefef;
+    padding: 0px 20px;
+}
+.title_login_sismuni strong{
+    padding: 0px 2px;
+}
+.display_flex_header_login .municipality_name{
+    padding: 0px 5px;
+    flex-wrap: nowrap;
+}
+.display_flex_header_login .municipality_name .system_name{
+    font-family: "Roboto", sans-serif, monospace;
+    font-size: 1.3rem;
+    padding: 0rem .3rem;
+}
+.wrapper .title span{
+    font-family: 'Roboto', sans-serif;
+}
+.left .muni_name{
+    font-size: 1.2rem;
+}
+.display_flex_header_login .left{
+    float: right;
+    display: block;
+    width: auto;
+    height: auto;
+    right: 20px;
+    padding: 0px 20px;
+    position: absolute;
+}
+@media only screen and (max-width: 768px) {
+    .left .muni_name {
+        display: none;
+        visibility: hidden;
+    }
+}
+.container_login_form{
+    width: 100%;
+    height: calc(100vh - 125px);
+    display: flex;
+    align-items: center;
+}
+.container{
+    max-width: 440px;
+    padding: 10px 20px;
+    margin: auto;
+    
+}
+.wrapper{
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+    height: 60px;
+    background: #16a085;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper form{
+padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+height: 45px;
+margin-bottom: 15px;
+position: relative;
+}
+.wrapper form .button{
+    margin-top: 10px;
+}
+.wrapper form .row input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+form .row input:focus{
+border-color: #16a085;
+box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .row input::placeholder{
+color: #999;
+}
+.row .button{
+    margin-top: 5px;
+}
+.wrapper form .row i{
+position: absolute;
+width: 47px;
+height: 100%;
+color: #fff;
+font-size: 18px;
+background: #16a085;
+border: 1px solid #16a085;
+border-radius: 5px 0 0 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.wrapper form .pass{
+margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+color: #16a085;
+font-size: 17px;
+text-decoration: none;
+}
+.wrapper form .pass a:hover{
+text-decoration: underline;
+}
+.wrapper form .button input{
+color: #fff;
+font-size: 20px;
+font-weight: 400;
+padding-left: 0px;
+background: #16a085;
+border: 1px solid #16a085;
+cursor: pointer;
+font-size: 15px;
+}
+form .button input:hover{
+background: #12876f;
+}
+.wrapper form .signup-link{
+text-align: center;
+margin-top: 20px;
+font-size: 17px;
+}
+.wrapper form .signup-link a{
+color: #16a085;
+text-decoration: none;
+}
+form .signup-link a:hover{
+text-decoration: underline;
+}

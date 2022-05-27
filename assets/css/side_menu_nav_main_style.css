@@ -1,0 +1,56 @@
+/* style of left menu (side-nav) */
+
+
+.sidebar_left{
+    position: relative;
+    display: flex;
+    width: 220px;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 99;
+    min-height: calc(100vh - 85px);
+}
+.sidebar_left .nav_left_main{
+    display: block;
+}
+.nav_left_main .ul{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.ul .li_items{
+    height: auto;
+    display: block;
+}
+.ul .li_items .a-items{
+    display: flex;
+    height: 2.8rem;
+    text-decoration: none;
+    align-items: center;
+    padding: 0rem .5rem;
+    color: #000;
+    box-sizing: border-box;
+}
+.ul .li_items .a-items:hover{
+    background: rgba(2, 77, 131, 1);
+    border-bottom: .02rem solid #000;
+    color: #efefef;
+}
+.a-items .module_name{
+    padding: 0rem .2rem;
+}
+.a-items .icon_module_name{
+    padding: 0rem .5rem 0rem 1rem;
+}
+.a-items .icon_module_name i{
+    width: 20px;
+}
+
+.li_items .active_module{
+    background: rgba(2, 77, 131, 1);
+    border-bottom: .02rem solid #000;
+}
+.li_items .active_module .icon_module_name, .li_items .active_module .module_name{
+    color: #efefef;
+}

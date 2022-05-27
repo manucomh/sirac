@@ -7,16 +7,15 @@ date_default_timezone_set('America/Lima');
 define('PREPROS'     , false); // Activar en caso de trabajar el desarrollo en prepros como servidor local
 
 // Lenguaje
-// define('SITE_LANG'   , $this->lng);
+define('SITE_LANG'   , $this->lng);
 
 // Versión de la aplicación
 define('SYSTEM_NAME'   , 'SIRAC');    
 define('SYSTEM_FULLNAME','Sistema de Registro de Actas');
-define('SYSTEM_VERSION', 'v1.0');          
+define('SYSTEM_VERSION', 'v1.0');   
+define('COPY_RIGHT','Consultora Arroba E.I.R.L.');       
 
 // Ruta base de nuestro proyecto
-// Esta constante ahora es configurada desde el archivo settings.php
-// define('BASEPATH','/registrocivil/');
 
 // Puerto y la URL del sitio
 define('PORT'       , isset($_SERVER['SERVER_PORT'])?'80':''); // Puerto por defecto de Prepros <2020
