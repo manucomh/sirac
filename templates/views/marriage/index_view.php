@@ -7,6 +7,12 @@
         
         <!-- panel de nacimiento -->
         <div class="main_panel_marriage">
+            <div class="container_search_form_marriage w-fit">
+                <form action="#" class="flex">
+                    <input type="text" class="">
+                    <button>Buscar</button>
+                </form>
+            </div>
 
         </div>
     </div>
